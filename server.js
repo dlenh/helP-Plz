@@ -9,3 +9,5 @@ const flash = require("express-flash");
 const logger = require("morgan");
 
 require("dotenv").config({path: "./config/env"})
+
+require("./config/passport")(passport)
