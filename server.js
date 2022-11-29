@@ -13,3 +13,7 @@ require("dotenv").config({path: "./config/env"})
 require("./config/passport")(passport)
 
 connectDB();
+
+app.listen(process.env.PORT, () => {
+    console.log("Server is running successfully!");
+})
