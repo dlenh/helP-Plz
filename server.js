@@ -7,6 +7,7 @@ const MongoStore = require("connect-mongo")(session);
 const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");
+const connectDB = require("./config/database");
 
 // use .evn file in config folder
 require("dotenv").config({path: "./config/env"})
