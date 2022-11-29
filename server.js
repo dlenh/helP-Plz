@@ -14,6 +14,9 @@ require("./config/passport")(passport)
 
 connectDB();
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.listen(process.env.PORT, () => {
     console.log("Server is running successfully!");
 })
