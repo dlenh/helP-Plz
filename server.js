@@ -8,6 +8,7 @@ const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");
 const connectDB = require("./config/database");
+const mainRoutes = require("./routes/main");
 
 // use .evn file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -52,6 +53,9 @@ app.use(passport.session());
 
 // use flash messages for errors
 app.use(flash());
+
+// set up routes for which the server is listening
+app.use("/", mainRoutes);
 
 // server running
 app.listen(process.env.PORT, () => {
