@@ -59,7 +59,7 @@ app.use(flash());
 // set up routes for which the server is listening
 app.use("/", mainRoutes);
 app.use("/post", postRoutes);
-app.use("/comment", commentsRoutes);
+app.use("/comment", commentRoutes);
 
 // server running
 app.listen(process.env.PORT, () => {
