@@ -24,7 +24,7 @@ module.exports = {
         _id: req.params.commentid
       });
       console.log("Comment has been deleted!");
-      res.redirect("/post/" + req.params.id);
+      res.redirect("/post/" + req.params.postid);
     } catch (err) {
       console.log(err);
     }
