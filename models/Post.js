@@ -7,15 +7,15 @@ const PostSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    require: true,
+    require: false,
   },
   cloudinaryId: {
     type: String,
-    require: true,
+    require: false,
   },
   caption: {
     type: String,
-    required: true,
+    required: false,
   },
   likes: {
     type: Number,
@@ -28,10 +28,6 @@ const PostSchema = new mongoose.Schema({
   createdAt: {
     type: Date,
     default: Date.now,
-  },
-  createdById: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User"
   },
 });
 
