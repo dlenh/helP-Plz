@@ -41,13 +41,14 @@ module.exports = {
   createPost: async (req, res) => {
     try {
       // Upload image to cloudinary
-    //   const result = await cloudinary.uploader.upload(req.file.path);
+
+      if (req.file) result = await cloudinary.uploader.upload(req.file.path);
 
       //media is stored on cloudainary - the above request responds with url to media and the media id that you will need when deleting content 
       await Post.create({
         title: req.body.title,
-        // image: result.secure_url,
-        // cloudinaryId: result.public_id,
+        image: req.file ? result.secure_url : "",
+        cloudinaryId: req.file ? result.public_id : "",
         caption: req.body.caption,
         likes: 0,
         user: req.user.id,
