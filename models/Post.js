@@ -29,6 +29,10 @@ const PostSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  createdById: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User"
+  },
 });
 
 //MongoDB Collection named here - will give lowercase plural of name 
