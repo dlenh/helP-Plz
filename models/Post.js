@@ -7,19 +7,19 @@ const PostSchema = new mongoose.Schema({
   },
   image: {
     type: String,
-    require: false,
+    require: true,
   },
   cloudinaryId: {
     type: String,
-    require: false,
+    require: true,
   },
   caption: {
     type: String,
-    required: false,
+    required: true,
   },
   likes: {
     type: Number,
-    required: false,
+    required: true,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
