@@ -10,7 +10,7 @@
 <body>
     <% if (locals.messages.errors) { %>
         <% messages.errors.forEach( el => { %>
-            <div class="alert alert-danger"><%= el.msg %></div> <!-- bootstrap classes - different ways to add default style -->
+            <div class="alert alert-danger row justify-content-center"><%= el.msg %></div> <!-- bootstrap classes - different ways to add default style -->
         <% }) %>    
     <% } %>
     <!-- <form action="/signup" method="POST">
@@ -24,15 +24,15 @@
     <main class="container">
         <div class="row justify-content-center">
           <section class="col-6 mt-5">
-            <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
+            <!-- <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
             <div class="alert alert-danger"><%= el.msg %></div>
             <% }) %> <% } %> <% if (locals.messages.info) { %> <%
             messages.info.forEach( el => { %>
             <div class="alert alert-info"><%= el.msg %></div>
-            <% }) %> <% } %>
+            <% }) %> <% } %> -->
             <form action="/signup" method="POST">
                 <div class="mb-3">
-                    <label for="userName" class="text-white form-label">User Name</label>
+                    <label for="userName" class="text-white form-label">Username</label>
                     <input type="text" name="userName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
@@ -41,7 +41,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="password" class="text-white form-label">Password</label>
-                    <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Must be at least 8 characters long">
                 </div>
                 <div class="mb-3">
                     <label for="confirmPassword" class="text-white form-label">Confirm Password</label>
