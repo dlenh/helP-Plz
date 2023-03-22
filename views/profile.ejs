@@ -1,5 +1,10 @@
 <%- include('partials/header') -%>
 <div class="container">
+  <% if (locals.messages.errors) { %>
+    <% messages.errors.forEach( el => { %>
+        <div class="alert alert-danger row justify-content-center"><%= el.msg %></div> <!-- bootstrap classes - different ways to add default style -->
+    <% }) %>    
+<% } %>
   <div class="row mt-5">
       <div class="col-6">
           <div>
@@ -11,7 +16,7 @@
             <h2>Ask a question</h2>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
-                  <label for="title" class="text-white form-label">Question</label>
+                  <label for="title" class="text-white form-label">Question (cannot be left blank)</label>
                   <input type="text" class="form-control" id="title" name="title">
               </div>
               <div class="mb-3">
@@ -19,7 +24,7 @@
                 <textarea class="form-control" id="caption" name="caption"></textarea>
               </div>
               <div class="mb-3">
-                <label for="imgUpload" class="text-white form-label">Image</label>
+                <label for="imgUpload" class="text-white form-label">Image (.jpg, .jpeg, or .png)</label>
                 <input type="file" class="form-control" id="imageUpload" name="file">
               </div>
               <button type="submit" class="btn btn-info" value="Upload">Submit</button>
