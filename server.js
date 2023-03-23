@@ -65,3 +65,6 @@ app.use("/comment", commentRoutes); // comment as answer to questions
 app.listen(process.env.PORT, () => {
     console.log("Server is running successfully!");
 })
+
+// app.get('/account/verify', passportConfig.isAuthenticated, userController.getVerifyEmail);
+// app.get('/account/verify/:token', passportConfig.isAuthenticated, userController.getVerifyEmailToken);
