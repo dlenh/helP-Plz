@@ -1,7 +1,7 @@
 # helP-Plz 
 A full-stack application that serves as a platform for users to ask and answer questions. 
 
-**Link to project:** 
+**Link to project:** Coming Soon
 
 ![Screenshot of website](https://gyazo.com/4801baea26a82dfa145b9687743607c0)
 
